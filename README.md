@@ -14,7 +14,9 @@ Inspirez-vous de la documentation disponible ([MDN](https://developer.mozilla.or
 
 Dernière modalité : vous écrierez votre article à l'aide du gestionnaire de contenu d'un·e autre élève.
 
-## Instruction
+## Instructions
+
+Vous trouverez ci-bas les instructions pour configurer votre environnement de travail local, et pour installer Kirby sur votre propre partition du serveur **webdev.cmaisonneuve.qc.ca**.
 
 ### Installation locale
 
@@ -24,11 +26,12 @@ Dernière modalité : vous écrierez votre article à l'aide du gestionnaire de 
 
 ### Version PHP
 
-Il se peut que la page affiche une erreur vous indiquant que votre version de PHP n'est pas compatible. Le serveur webdev.cmaisonneuve.qc.ca où nous installerons notre gestionnaire de contenu utilise PHP 7.3.31. Nous devons donc installer une version compatible sur notre poste de travail.
+Il se peut que la page affiche une erreur vous indiquant que votre version de PHP n'est pas compatible. Le serveur **webdev.cmaisonneuve.qc.ca** où nous installerons notre gestionnaire de contenu utilise PHP 7.3.31. Nous devons donc installer une version compatible sur notre poste de travail.
 
 #### Mac
 
-Téléchargez une version compatible à l'aide de la commande commande `brew install php@8.0`. Il suffit ensuite de dire à `brew` quelle version utiliser : `brew unlink php && brew link php@8.0`. (N'oubliez pas de faire l'opération inverse lorsque vous avez terminé de travailler.)
+1. Téléchargez une version compatible à l'aide de la commande commande `brew install php@8.0`.
+2. Dites à `brew` quelle version utiliser : `brew unlink php && brew link php@8.0`. (N'oubliez pas de faire l'opération inverse lorsque vous avez terminé de travailler.)
 
 #### Windows
 
@@ -39,8 +42,7 @@ TODO.
 #### Administrateur·rice
 
 1. Naviguez à l'adresse suivante : localhost:8000/panel
-2. Entrez les informations ci-bas :
-
+2. Entrez les informations suivante :
     - Email : **[numéro étudiant·e]@cmaisonneuve.qc.ca**
     - mot de passe : **582-31W-MA-22634**
 
@@ -49,6 +51,20 @@ TODO.
 1. Dans le menu « hamburger » en haut à gauche, cliquez sur « Users ».
 2. Cliquez sur « Add new user ».
 3. Entrez les informations de votre collègue, et choisissez le rôle « editor ».
+
+### Installation sur le serveur webdev.cmaisonneuve.qc.ca
+
+Chaque partition du serveur **webdev.cmaisonneuve.qc.ca** possède une structure identique:
+
+-   `/home/<codereseau>` : répertoire personnel (home directory)
+-   `/home/<codereseau>/www` : racine des fichiers du serveur web
+-   `/home/<codereseau>/logs` : journaux du serveur web et PHP
+-   `/tmp` : dossier temporaire (fichiers effacés après 1 jour)
+-   `/var/tmp` : dossier temporaire (fichiers effacés après 30 jours)
+
+Nous installerons Kirby dans le dossier `www` afin que votre site Web soit disponible à l'adresse https://<codereseau>.webdev.cmaisonneuve.qc.ca.
+
+#### Accès SSH
 
 `scp -r journal-de-bord-maxime-pigeon/(*|.*) mpigeon@webdev.cmaisonneuve.qc.ca:www`
 
