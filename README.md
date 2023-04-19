@@ -14,47 +14,43 @@ Inspirez-vous de la documentation disponible ([MDN](https://developer.mozilla.or
 
 Dernière modalité : vous écrierez votre article à l'aide du gestionnaire de contenu d'un·e autre élève.
 
-## Instructions
-
-Vous trouverez ci-bas les instructions pour configurer votre environnement de travail local, et pour installer Kirby sur votre propre partition du serveur **webdev.cmaisonneuve.qc.ca**.
-
-### Installation locale
+## Installation locale
 
 1. Acceptez le devoir sur GitHub Classroom : https://classroom.github.com/a/lIaYn4SY.
 2. Cloner le dépôt sur votre ordinateur.
 3. Vérifiez que le site fonctionne en exécutant la commande : `php -S localhost:8000 kirby/router.php`. Vous devriez voir la page d'accueil par défaut du _Starterkit_ de Kirby.
 
-### Version PHP
+## Version PHP
 
 Il se peut que la page affiche une erreur vous indiquant que votre version de PHP n'est pas compatible. Le serveur **webdev.cmaisonneuve.qc.ca** où nous installerons notre gestionnaire de contenu utilise PHP 7.3.31. Nous devons donc installer une version compatible sur notre poste de travail.
 
-#### Mac
+### Mac
 
 1. Téléchargez une version compatible à l'aide de la commande commande `brew install php@8.0`.
 2. Dites à `brew` quelle version utiliser : `brew unlink php && brew link php@8.0`. (N'oubliez pas de faire l'opération inverse lorsque vous avez terminé de travailler.)
 
-#### Windows
+### Windows
 
-TODO.
+TODO
 
-### Création des utilisateur·rices
+## Création des utilisateur·rices
 
-#### Administrateur·rice
+### Administrateur·rice
 
-1. Naviguez à l'adresse suivante : localhost:8000/panel
+1. Naviguez à l'adresse **localhost:8000/panel**.
 2. Entrez les informations suivante :
-    - Email : **[numéro étudiant·e]@cmaisonneuve.qc.ca**
+    - Email : **<codereseau>@cmaisonneuve.qc.ca**
     - mot de passe : **582-31W-MA-22634**
 
-#### Éditeur·rice
+### Éditeur·rice
 
 1. Dans le menu « hamburger » en haut à gauche, cliquez sur « Users ».
 2. Cliquez sur « Add new user ».
 3. Entrez les informations de votre collègue, et choisissez le rôle « editor ».
 
-### Installation sur le serveur webdev.cmaisonneuve.qc.ca
+## Installation sur le serveur du Collège
 
-Chaque partition du serveur **webdev.cmaisonneuve.qc.ca** possède une structure identique:
+Chaque partition du serveur de développement du Collège possède la structure suivante:
 
 -   `/home/<codereseau>` : répertoire personnel (home directory)
 -   `/home/<codereseau>/www` : racine des fichiers du serveur web
@@ -62,11 +58,41 @@ Chaque partition du serveur **webdev.cmaisonneuve.qc.ca** possède une structure
 -   `/tmp` : dossier temporaire (fichiers effacés après 1 jour)
 -   `/var/tmp` : dossier temporaire (fichiers effacés après 30 jours)
 
-Nous installerons Kirby dans le dossier `www` afin que votre site Web soit disponible à l'adresse https://<codereseau>.webdev.cmaisonneuve.qc.ca.
+Nous installerons Kirby dans le dossier `www` afin que le site Web soit disponible à l'adresse **https://<codereseau>.webdev.cmaisonneuve.qc.ca**.
 
-#### Accès SSH
+Voir https://webdev.cmaisonneuve.qc.ca pour plus d'information au sujet du serveur.
 
-`scp -r journal-de-bord-maxime-pigeon/(*|.*) mpigeon@webdev.cmaisonneuve.qc.ca:www`
+### Accès SSH
+
+Secure Shell (SSH) est un protocole de communication sécurisé qui permet de se connecter à distance à un ordinateur afin d'obtenir un shell ou ligne de commande.
+
+Pour vous connecter à votre partition du serveur de développement du Collège, il suffit d'exécuter la commande suivante :
+
+```sh
+ssh <codereseau>@webdev.cmaisonneuve.qc.ca
+```
+
+### Transfert de fichiers
+
+Nous utiliserons SCP pour transférer les fichiers de votre installation Kirby sur le serveur de développement du Collège.
+
+#### Mac
+
+Exécutez la commande suivante :
+
+```sh
+scp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www
+```
+
+#### Windows
+
+PSCP est une version de SCP compatible avec Windows. Vous le pouvez à l'adresse https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html. Une fois le fichier placé dans votre PATH, exécutez la commande suivante :
+
+```sh
+pscp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www
+```
+
+## Synchroniser votre environnement de développement et votre serveur avec Git
 
 git push auth
-personnal access token
+personal access token
