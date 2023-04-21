@@ -42,7 +42,7 @@ Il se peut que la page affiche une erreur vous indiquant que votre version de PH
 
 1. Naviguez à l'adresse **localhost:8000/panel**.
 2. Entrez les informations suivante :
-    - Email : **<codereseau>@cmaisonneuve.qc.ca**
+    - Email : <codereseau>@cmaisonneuve.qc.ca
     - mot de passe : **582-31W-MA-22634**
 
 ### Éditeur·rice
