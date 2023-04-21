@@ -85,8 +85,25 @@ Rappelez-vous, la commande pour changer de répertoire est `cd`. La commande `ls
 
 Nous utiliserons SCP pour transférer les fichiers de votre installation Kirby sur le serveur de développement du Collège. Exécutez la commande suivante :
 
+#### Mac
+
 ```sh
 scp -r "chemin/vers/dépôt/(*|.*)" <codereseau>@webdev.cmaisonneuve.qc.ca:www/journal-de-bord
+```
+
+#### Windows
+
+Puisque l'implémentation de SCP sur Windows diffère de celle sur Mac et Linux, il faut transférer nos fichiers en 2 parties. D'abord exécuter la commande suivante :
+
+
+```sh
+scp -r "chemin/vers/dépôt/*" <codereseau>@webdev.cmaisonneuve.qc.ca:www/journal-de-bord
+```
+
+Puis, pour transférer les fichiers cachés :
+
+```sh
+scp -r "chemin/vers/dépôt/.*" <codereseau>@webdev.cmaisonneuve.qc.ca:www/journal-de-bord
 ```
 
 Votre site Web devrait maintenant être accessible à l'adresse suivante : **https://[codereseau].webdev.cmaisonneuve.qc.ca/journal-de-bord**.
