@@ -124,9 +124,7 @@ Il est fort probable que vous aillez à vous authentifier afin de pouvoir intera
 
 ## Accéder au serveur du Collège à distance
 
-Le serveur du Collège est accessible de l'extérieur du Collège à partir d’une passerelle OpenVPN.
-
-Consulter la procédure d'installation du VPN pour votre plateforme:
+Le serveur du Collège est accessible de l'extérieur du Collège à partir d’une passerelle OpenVPN. Consulter la procédure d'installation du VPN pour votre plateforme :
 
 -   [Mac](https://webdev.cmaisonneuve.qc.ca/pdf/webdev-vpn-mac.pdf)
 -   [Windows](https://webdev.cmaisonneuve.qc.ca/pdf/webdev-vpn-windows.pdf)
