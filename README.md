@@ -61,7 +61,7 @@ Chaque partition du serveur de développement du Collège possède la structure 
 -   `/tmp` : dossier temporaire (fichiers effacés après 1 jour)
 -   `/var/tmp` : dossier temporaire (fichiers effacés après 30 jours)
 
-Nous installerons Kirby dans le dossier `www` afin que le site Web soit disponible à l'adresse **https://<codereseau>.webdev.cmaisonneuve.qc.ca**.
+Nous installerons Kirby dans le dossier `www` afin que le site Web soit disponible à l'adresse **https://[codereseau].webdev.cmaisonneuve.qc.ca**.
 
 Voir https://webdev.cmaisonneuve.qc.ca pour plus d'information au sujet du serveur.
 
@@ -89,7 +89,7 @@ Nous utiliserons SCP pour transférer les fichiers de votre installation Kirby s
 scp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www/journal-de-bord
 ```
 
-Votre site Web devrait maintenant être accessible à l'adresse suivante : **https://<codereseau>.webdev.cmaisonneuve.qc.ca/journal-de-bord**.
+Votre site Web devrait maintenant être accessible à l'adresse suivante : **https://[codereseau].webdev.cmaisonneuve.qc.ca/journal-de-bord**.
 
 ## Synchroniser votre environnement de développement et votre serveur avec Git
 
