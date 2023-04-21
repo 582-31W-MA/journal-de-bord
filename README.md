@@ -22,7 +22,9 @@ Dernière modalité : vous écrierez votre article à l'aide du gestionnaire de 
 
 ## Version PHP
 
-Il se peut que la page affiche une erreur vous indiquant que votre version de PHP n'est pas compatible. Le serveur **webdev.cmaisonneuve.qc.ca** où nous installerons notre gestionnaire de contenu utilise PHP 7.3.31. Nous devons donc installer une version compatible sur notre poste de travail.
+Il se peut que la page affiche une erreur vous indiquant que votre version de PHP n'est pas compatible. Le serveur **webdev.cmaisonneuve.qc.ca** où nous installerons notre gestionnaire de contenu utilise PHP 7.3.31[^1]. Nous devons donc installer une version compatible sur notre poste de travail.
+
+[^1]: Pour des raisons de sécurité, assurez-vous que la version des langages et applications utilisées soit toujours supportée. Par exemple, PHP 7.3 est en fin de vie depuis fin 2021, et est donc vulnérable.
 
 ### Mac
 
@@ -86,7 +88,7 @@ scp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www
 
 #### Windows
 
-PSCP est une version de SCP compatible avec Windows. Vous le pouvez à l'adresse https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html. Une fois le fichier placé dans votre PATH, exécutez la commande suivante :
+PSCP est une version de SCP compatible avec Windows, disponible à l'adresse https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html. Une fois le fichier téléchargé et placé dans votre PATH, exécutez la commande suivante :
 
 ```sh
 pscp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www
@@ -96,3 +98,14 @@ pscp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www
 
 git push auth
 personal access token
+
+## Accéder au serveur du Collège à distance
+
+Le serveur du Collège est accessible de l'extérieur du Collège à partir d’une passerelle OpenVPN.
+
+Consulter la procédure d'installation du VPN pour votre plateforme:
+
+-   [Mac](https://webdev.cmaisonneuve.qc.ca/pdf/webdev-vpn-mac.pdf)
+-   [Windows](https://webdev.cmaisonneuve.qc.ca/pdf/webdev-vpn-windows.pdf)
+
+Une fois active, la connexion VPN vous permettra d'accéder au serveur via SSH ainsi qu'à votre site Web.
