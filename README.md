@@ -33,7 +33,8 @@ Il se peut que la page affiche une erreur vous indiquant que votre version de PH
 
 ### Windows
 
-TODO
+1. Téléchargez PHP 8.0 (version _VS16 x64 Non Thread Safe_) à l'adresse suivante : https://windows.php.net/download#php-8.0
+2. Ajoutez PHP à votre PATH.
 
 ## Création des utilisateur·rices
 
@@ -74,30 +75,35 @@ Pour vous connecter à votre partition du serveur de développement du Collège,
 ssh <codereseau>@webdev.cmaisonneuve.qc.ca
 ```
 
+### Créer un dossier `journal-de-bord`
+
+Une fois connecté au serveur du Collège via SSH, naviguez dans le dossier `www` et créez-y une nouveau dossier nommé `journal-de-bord`.
+
+Rappelez-vous, la commande pour changer de répertoire est `cd`. La commande `ls` permet d'afficher le contenu du répertoire dans lequel vous êtes présentement, et la commande `mkdir` permet de créer un nouveau répertoire.
+
 ### Transfert de fichiers
 
-Nous utiliserons SCP pour transférer les fichiers de votre installation Kirby sur le serveur de développement du Collège.
-
-#### Mac
-
-Exécutez la commande suivante :
+Nous utiliserons SCP pour transférer les fichiers de votre installation Kirby sur le serveur de développement du Collège. Exécutez la commande suivante :
 
 ```sh
-scp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www
+scp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www/journal-de-bord
 ```
 
-#### Windows
-
-PSCP est une version de SCP compatible avec Windows, disponible à l'adresse https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html. Une fois le fichier téléchargé et placé dans votre PATH, exécutez la commande suivante :
-
-```sh
-pscp -r chemin/vers/dépôt/(*|.*) <codereseau>@webdev.cmaisonneuve.qc.ca:www
-```
+Votre site Web devrait maintenant être accessible à l'adresse suivante : **https://<codereseau>.webdev.cmaisonneuve.qc.ca/journal-de-bord**.
 
 ## Synchroniser votre environnement de développement et votre serveur avec Git
 
-git push auth
-personal access token
+Puisque nous avons dupliqué tous les fichiers du dépôt sur le serveur, votre répertoire devrait déjà être initialisé avec Git. Pour en être sûr, exécuter la commande suivante dans votre répertoire `www/journal-de-bord` :
+
+```sh
+git status
+```
+
+Dorénavant, il vous suffira de `git pull` ou `git push` sur votre serveur les changements effectués dans votre environnement de travail local, et vice versa.
+
+### Authentification GitHub
+
+Il est fort probable que vous aillez à vous authentifier afin de pouvoir interagir avec votre dépôt GitHub à partir du serveur. Pour des raisons de sécurité, GitHub requiert l'utilisation d'un _personal access token_ comme mot de passe. Pour créer un _personal access token_, suivez les instructions disponibles à l'adresse suivante, **et n'oubliez pas de sauvegarder votre _personal access token_** : https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 ## Accéder au serveur du Collège à distance
 
@@ -109,3 +115,13 @@ Consulter la procédure d'installation du VPN pour votre plateforme:
 -   [Windows](https://webdev.cmaisonneuve.qc.ca/pdf/webdev-vpn-windows.pdf)
 
 Une fois active, la connexion VPN vous permettra d'accéder au serveur via SSH ainsi qu'à votre site Web.
+
+## Soumettre les entrées du journal
+
+À chaque semaine, vous devrez soumettre votre entrée via le CMS de l'un ou l'une de vos collègues. Si vous avez suivi les instructions ci-haut, vous devriez pouvoir vous connecter au panel de celui-ci à l'adresse suivante : **https://<codereseau-de-votre-collègue>.webdev.cmaisonneuve.qc.ca/journal-de-bord/panel**.
+
+## Critères d'évaluation
+
+| Critère | Points |
+| ------- | ------ |
+| Remise  | 3      |
