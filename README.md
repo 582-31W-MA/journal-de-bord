@@ -35,6 +35,7 @@ Il se peut que la page affiche une erreur vous indiquant que votre version de PH
 
 1. Téléchargez PHP 8.0 (version _VS16 x64 Non Thread Safe_) à l'adresse suivante : https://windows.php.net/download#php-8.0
 2. Ajoutez PHP à votre PATH.
+3. Activez les extensions `php_curl` et `php_mbstring`.
 
 ## Création des utilisateur·rices
 
